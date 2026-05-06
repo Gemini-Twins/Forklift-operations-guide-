@@ -3,143 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Twins Online Services | Professional Logistics & Digital</title>
+    <title>Gemini Twins | Online Services & Professional Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            background-color: #f4f7f6; 
+        :root {
+            --primary: #ff6600;
+            --primary-dark: #cc5200;
+            --secondary: #002d5b;
+            --text: #1a1a1a;
+            --light-bg: #fcfcfc;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.8);
         }
 
-        /* Container */
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 20px; 
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            background-color: var(--white);
+            color: var(--text);
+            overflow-x: hidden;
         }
 
-        /* Header Section */
-        header { 
-            background: #1a1a1a; 
-            color: #ffffff; 
-            padding: 60px 20px; 
+        /* --- Professional Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo { font-weight: 900; font-size: 1.6rem; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            margin-left: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 140px 8% 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-text { flex: 1.2; }
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; margin: 0 0 20px; }
+        .hero-text p { font-size: 1.2rem; color: #555; margin-bottom: 30px; }
+
+        .hero-image { flex: 0.8; position: relative; }
+        .hero-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* --- Trust Bar (Certifications) --- */
+        .trust-bar {
+            background: var(--secondary);
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
             text-align: center;
-            border-bottom: 4px solid #0056b3;
-        }
-        header h1 { font-size: 2.5rem; letter-spacing: 2px; margin-bottom: 10px; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
-
-        /* Card Styling */
-        .card { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
-            margin: 30px 0; 
         }
 
-        h2 { color: #0056b3; margin-bottom: 15px; font-size: 1.8rem; }
-        p { margin-bottom: 15px; }
-        
-        .services-list { list-style: none; padding: 0; margin-bottom: 20px; }
-        .services-list li { margin-bottom: 10px; padding-left: 5px; border-left: 3px solid #0056b3; padding-left: 10px; }
+        .trust-item { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
 
-        /* Button System */
-        .cta-container { 
-            display: flex; 
-            gap: 15px; 
-            flex-wrap: wrap; 
-            margin-top: 25px; 
+        /* --- Service Separation --- */
+        .section { padding: 100px 8%; max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* --- Stability Graphics --- */
+        .graphic-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
-        .btn { 
-            padding: 16px 24px; 
-            font-size: 1rem; 
-            font-weight: 700; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            transition: 0.3s; 
+        .graphic-card {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            flex: 1;
-            min-width: 250px;
-            cursor: pointer;
-            display: inline-block;
         }
 
-        /* Specific Button Colors */
-        .btn-primary { background: #0056b3; color: white; border: 2px solid #0056b3; }
-        .btn-primary:hover { background: #004494; transform: translateY(-2px); }
+        .graphic-card img { width: 100%; max-width: 300px; margin: 20px 0; border-radius: 12px; }
 
-        .btn-secondary { background: #333; color: white; border: 2px solid #333; }
-        .btn-secondary:hover { background: #000; transform: translateY(-2px); }
+        /* --- Premium Pricing --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
 
-        .btn-whatsapp { background: #25D366; color: white; border: 2px solid #25D366; }
-        .btn-whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
+        .card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 50px 40px;
+            border: 1px solid #eee;
+            position: relative;
+        }
 
-        .btn-outline { background: transparent; color: #0056b3; border: 2px solid #0056b3; }
-        .btn-outline:hover { background: #f0f7ff; }
+        .card.popular {
+            border: 3px solid var(--primary);
+            box-shadow: 0 30px 60px rgba(255, 102, 0, 0.1);
+            transform: scale(1.03);
+        }
 
-        /* Responsive Mobile Tweak */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            .cta-container { flex-direction: column; }
-            .btn { width: 100%; min-width: 100%; }
+        .pop-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .price { font-size: 4rem; font-weight: 900; margin: 20px 0; }
+        .price span { font-size: 1.5rem; font-weight: 400; color: #777; }
+
+        .feature-list { list-style: none; padding: 0; margin-bottom: 40px; }
+        .feature-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; }
+        .feature-list li::before { content: "●"; color: var(--primary); margin-right: 15px; font-size: 10px; }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            background: var(--text);
+            color: white;
+        }
+
+        .btn-primary { background: var(--primary); }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        /* --- Footer --- */
+        footer { background: #050505; color: white; padding: 80px 8% 40px; text-align: center; }
+
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 3000;
+        }
+
+        /* Responsive Logic */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
+            .graphic-container { grid-template-columns: 1fr; }
+            .pricing-grid { padding: 0 20px; }
+            .card.popular { transform: none; margin: 20px 0; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>GEMINI TWINS</h1>
-        <p>Professional Digital Solutions & Industry Logistics Expertise</p>
-    </header>
+    <nav>
+        <div class="logo">GEMINI<span>TWINS</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#manual">Training Manual</a>
+            <a href="mailto:luthando.danxa99@gmail.com">Contact</a>
+        </div>
+    </nav>
 
-    <div class="container">
-        
-        <section class="card">
-            <h2>Bridging the Gap</h2>
-            <p>At <strong>Gemini Twins Online Services</strong>, we specialize in democratizing professional documentation and digital marketing. Based in East London, we provide high-level administrative support and technical guides for the modern workforce.</p>
-        </section>
-
-        <section class="card" id="forklift-guide">
-            <h2>The Master Forklift Operator’s Guide</h2>
-            <p>Master the machine with our comprehensive blueprint. Learn advanced safety protocols, the stability triangle, and essential pre-shift maintenance.</p>
-            
-            <div class="cta-container">
-                <a href="#payment-link" class="btn btn-primary">BUY NOW — R150</a>
-                
-                <a href="/assets/sample-guide.pdf" class="btn btn-outline" download>DOWNLOAD FREE SAMPLE</a>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Expert Training. <br>Digital <span class="orange-text">Excellence.</span></h1>
+            <p>From high-volume logistics mastery to professional digital brand revamps. We equip the modern workforce with the tools to lead.</p>
+            <div style="display: flex; gap: 15px;">
+                <a href="#manual" class="btn btn-primary" style="flex: 1;">Get The Guide</a>
+                <a href="#services" class="btn" style="flex: 1; background: #eee; color: #333;">Our Services</a>
             </div>
-        </section>
+        </div>
+        <div class="hero-image">
+            <img src="1000780556.png" alt="Luthando Danxa - Gemini Twins Online Services">
+        </div>
+    </section>
 
-        <section class="card">
-            <h2>Our Digital Services</h2>
-            <p>Expert solutions for individuals and businesses:</p>
-            <ul class="services-list">
-                <li>✅ Professional Documentation & CVs</li>
-                <li>✅ Digital Marketing & Social Media Strategy</li>
-                <li>✅ Safety Manuals & Technical Writing</li>
-                <li>✅ Web Landing Pages (Netlify/GitHub)</li>
-            </ul>
-
-            <div class="cta-container">
-                <a href="https://wa.me/27679867629?text=Hi%20Luthando,%20I'm%20interested%20in%20your%20digital%20marketing%20and%20documentation%20services." class="btn btn-whatsapp">
-                    Chat on WhatsApp
-                </a>
-
-                <a href="mailto:luthando.danxa99@gmail.com?subject=Service%20Inquiry%20-%20Gemini%20Twins&body=Hi%20Luthando,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20your%20digital%20marketing%20and%20professional%20documentation%20services.%20Please%20let%20me%20know%20your%20availability%20for%20a%20consultation." class="btn btn-secondary">
-                    Email Inquiry
-                </a>
-            </div>
-        </section>
-
+    <div class="trust-bar">
+        <div class="trust-item">CODE 14 CERTIFIED</div>
+        <div class="trust-item">FORKLIFT INSTRUCTOR</div>
+        <div class="trust-item">STOCK CONTROL SPECIALIST</div>
+        <div class="trust-item">FIRE SAFETY CERTIFIED</div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #888; font-size: 0.9rem;">
-        <p>&copy; 2026 Gemini Twins Online Services. Managed by Luthando Danxa.</p>
+    <section class="section" id="services">
+        <div class="section-header">
+            <span class="orange-text" style="font-weight: 900; letter-spacing: 2px;">THE BRAND</span>
+            <h2>Gemini Twins Online Services</h2>
+            <p>Your digital stability and professional growth, automated.</p>
+        </div>
+        
+        <div class="graphic-container">
+            <div class="graphic-card">
+                <h3>Digital Framework</h3>
+                <p>We build the "Stability" of your online business presence.</p>
+                <img src="stability.png" alt="Digital Stability Framework">
+            </div>
+            <div class="graphic-card">
+                <h3>Automation & Revamps</h3>
+                <p>CV redesigns and business automation for a modern edge.</p>
+                <div style="height: 200px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; border-radius: 10px;">[Automation Preview]</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="manual" style="background: var(--light-bg);">
+        <div class="section-header">
+            <span class="orange-text" style="font-weight: 900; letter-spacing: 2px;">THE PRODUCT</span>
+            <h2>Master Forklift Operator's Guide</h2>
+            <p>Technical precision for the elite logistics professional.</p>
+        </div>
+
+        <div class="graphic-container">
+            <div class="graphic-card" style="background: white;">
+                <h3>The Stability Triangle</h3>
+                <p>The physics of safety in distribution centers.</p>
+                <div style="height: 200px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center;">[forklift_triangle.png]</div>
+            </div>
+            <div class="graphic-card" style="background: white;">
+                <h3>Advanced Maneuvers</h3>
+                <p>High-shelf stacking and load-handling secrets.</p>
+                <div style="height: 200px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center;">[maneuver_diagram.png]</div>
+            </div>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="card">
+                <div style="font-weight: 800; color: #999;">ESSENTIAL</div>
+                <div class="price">R199</div>
+                <ul class="feature-list">
+                    <li>Pre-shift Safety Checklists</li>
+                    <li>Basic Operations Theory</li>
+                    <li>Digital PDF Manual</li>
+                </ul>
+                <a href="#" class="btn">Order Essential</a>
+            </div>
+
+            <div class="card popular">
+                <div class="pop-badge">MOST POPULAR</div>
+                <div style="font-weight: 800; color: var(--primary);">PROFESSIONAL</div>
+                <div class="price">R349</div>
+                <ul class="feature-list">
+                    <li><strong>Everything in Essential</strong></li>
+                    <li>Stability Triangle Masterclass</li>
+                    <li>Advanced Maneuvering Guide</li>
+                    <li>Load Handling Secrets</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Order Professional</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/27679867629" class="whatsapp-fab">CHATS ON WHATSAPP</a>
+
+    <footer>
+        <div class="logo">GEMINI<span>TWINS</span></div>
+        <p style="margin: 20px 0; opacity: 0.6;">Professional Logistics & Digital Solutions</p>
+        <p>luthando.danxa99@gmail.com | East London, SA</p>
+        <p style="font-size: 0.8rem; margin-top: 40px; opacity: 0.3;">&copy; 2026 Gemini Twins. Built for the modern professional.</p>
     </footer>
 
 </body>
