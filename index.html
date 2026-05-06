@@ -4,146 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gemini Twins | Online Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            /* Brand colors from your screenshot */
-            --primary: #ff6000;
-            --primary-dark: #cc5200;
-            --secondary: #002d5b;
-            --text: #1a1a1a;
-            --light-bg: #fcfcfc;
-            --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.8);
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Hero Section Styling */
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, var(--secondary) 0%, #001a33 100%);
-            color: var(--white);
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* The Button */
-        .cta-button {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 18px 36px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(255, 96, 0, 0.3);
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 96, 0, 0.4);
-        }
-
-        /* Main Content Section */
-        .content-section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin-top: -60px;
-            text-align: center;
-        }
-
-        .price-tag {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin: 20px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: var(--white);
-            border-top: 1px solid #eee;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.2rem; }
-            .card { padding: 25px; margin-top: -40px; }
-        }
+        :root { --primary: #ff6600; --dark: #1a1a1a; --light: #f4f4f4; }
+        body { font-family: sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 2rem; text-align: center; }
+        .container { padding: 20px; max-width: 800px; margin: auto; }
+        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; border-left: 5px solid var(--primary); shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .btn { background: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
+        img { width: 100%; border-radius: 8px; margin: 10px 0; }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <h1>Master Forklift Operator’s Guide</h1>
-        <p>Unlock the skills you need for a professional career. Expert insights, safety protocols, and operational mastery in one digital guide.</p>
-        
-        <a href="#purchase" class="cta-button">Secure Your Copy</a>
-    </section>
+<header>
+    <h1>Gemini Twins</h1>
+    <p>Professional Digital Solutions & Operator Guides</p>
+</header>
 
-    <div class="content-section" id="purchase">
-        <div class="card">
-            <h2>Start Your Journey Today</h2>
-            <p>This comprehensive guide is designed for both beginners and experienced operators looking to sharpen their skills.</p>
-            
-            <div class="price-tag">R150.00</div>
-            
-            <p><em>Instant Digital Access</em></p>
-        </div>
+<div class="container">
+    <div class="card">
+        <h2>📄 Professional CV Revamping</h2>
+        <p>Get noticed by recruiters. We polish your CV to industry standards, ensuring your skills stand out.</p>
+        <a href="mailto:luthando.danxa99@gmail.com" class="btn">Enquire Now</a>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Gemini Twins Online Services. All rights reserved.</p>
-    </footer>
+    <div class="card">
+        <h2>🚜 Master Forklift Operator’s Guide</h2>
+        <p>Our exclusive digital guide covers everything from the Stability Triangle to advanced warehouse maneuvers.</p>
+        <img src="stability-triangle.png" alt="Stability Triangle Preview">
+        <a href="#" class="btn">Purchase Guide - R180</a>
+    </div>
+
+    <div class="card" style="text-align: center; border-left: none; background: var(--dark); color: white;">
+        <h3>Contact Luthando</h3>
+        <p>📍 325 Skeyi Street, Duncan Village, East London</p>
+        <p>📞 067 986 7629</p>
+    </div>
+</div>
 
 </body>
 </html>
