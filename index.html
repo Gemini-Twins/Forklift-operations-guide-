@@ -3,44 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Twins | Online Services</title>
+    <title>Gemini Twins | Digital Solutions</title>
     <style>
-        :root { --primary: #ff6600; --dark: #1a1a1a; --light: #f4f4f4; }
-        body { font-family: sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
-        header { background: var(--dark); color: white; padding: 2rem; text-align: center; }
-        .container { padding: 20px; max-width: 800px; margin: auto; }
-        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; border-left: 5px solid var(--primary); shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .btn { background: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
-        img { width: 100%; border-radius: 8px; margin: 10px 0; }
+        /* --- CSS STYLING --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 300px; /* Responsive: stacks on mobile, side-by-side on desktop */
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h2 {
+            color: #1a1a2e;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: auto;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            text-align: center;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Gemini Twins</h1>
-    <p>Professional Digital Solutions & Operator Guides</p>
-</header>
+    <header>
+        <h1>Gemini Twins</h1>
+        <p>Professional Digital Solutions & Operations</p>
+    </header>
 
-<div class="container">
-    <div class="card">
-        <h2>📄 Professional CV Revamping</h2>
-        <p>Get noticed by recruiters. We polish your CV to industry standards, ensuring your skills stand out.</p>
-        <a href="mailto:luthando.danxa99@gmail.com" class="btn">Enquire Now</a>
-    </div>
+    <div class="container">
+        
+        <div class="card">
+            <h2>📄 Professional CV Revamping</h2>
+            <p>Get noticed by recruiters. We polish your professional profile to stand out in the job market.</p>
+            <a href="mailto:luthando.danxa99@gmail.com" class="btn">Email Us Now</a>
+        </div>
 
-    <div class="card">
-        <h2>🚜 Master Forklift Operator’s Guide</h2>
-        <p>Our exclusive digital guide covers everything from the Stability Triangle to advanced warehouse maneuvers.</p>
-        <img src="stability-triangle.png" alt="Stability Triangle Preview">
-        <a href="#" class="btn">Purchase Guide - R180</a>
-    </div>
+        <div class="card">
+            <h2>🚜 Master Forklift Operator’s Guide</h2>
+            <p>Our exclusive digital guide covers essential safety, stability triangles, and compliance.</p>
+            <img src="stability-triangle.png" alt="Stability Triangle">
+            <a href="#" class="btn">Purchase Guide</a>
+        </div>
 
-    <div class="card" style="text-align: center; border-left: none; background: var(--dark); color: white;">
-        <h3>Contact Luthando</h3>
-        <p>📍 325 Skeyi Street, Duncan Village, East London</p>
-        <p>📞 067 986 7629</p>
+        <div class="card">
+            <h2>Forklift Controls</h2>
+            <p>A quick reference for operational layout and safety checks.</p>
+            <img src="controls.jpg" alt="Forklift Controls">
+        </div>
+
+        <div class="card contact-info">
+            <h2>Contact Us</h2>
+            <p>📍 325 Skeyi Street, Duncan Village, East London</p>
+            <p>📞 067 986 7629</p>
+            <a href="tel:0679867629" class="btn">Call Directly</a>
+        </div>
+
     </div>
-</div>
 
 </body>
 </html>
